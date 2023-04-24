@@ -5,7 +5,7 @@ $(document).ready(function () {
   function setHourColors() {
     var now = dayjs();
 
-    for(var i = 9; i < 17; i++) {
+    for(var i = 9; i < 18; i++) {
        // $("#hour-" + i + " textarea").removeClass("future");
         if(i < now.hour()){
             $("#hour-" + i + " textarea").addClass("past");
@@ -16,6 +16,19 @@ $(document).ready(function () {
         }
     }
   }
+
+  function setDay() {
+    var now = dayjs();
+   // var d = new Date(2018, 8, 18);
+   // var day = dayjs(d);
+    let today = now;
+    let currentDay = document.querySelector('#currentDay');
+    console.log(today);
+    currentDay.textContent =  today;
+  }
+ 
+
+   
  
   function loadStoredData() {
     eventsData = JSON.parse(localStorage.getItem("calendarEvents"));
@@ -62,6 +75,7 @@ $(document).ready(function () {
     $(function() {
       loadStoredData();
       setHourColors();
+      setDay();
     });
 
 
