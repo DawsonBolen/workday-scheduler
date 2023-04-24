@@ -23,7 +23,6 @@ $(document).ready(function () {
    // var day = dayjs(d);
     let today = now;
     let currentDay = document.querySelector('#currentDay');
-    console.log(today);
     currentDay.textContent =  today;
   }
  
